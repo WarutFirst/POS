@@ -10,7 +10,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
-    <h1>Index</h1>
+    <h1>รายการขาย</h1>
     </div><!-- /.container-fluid -->
   </section>
   <!-- Main content -->

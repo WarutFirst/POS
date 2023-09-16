@@ -49,7 +49,7 @@ $row=mysqli_fetch_array($rs_member);
 
     <div class="card card-gray">
             <div class="card-header ">
-              <h3 class="card-title">แก้ไขสมาชิก</h3>
+              <h3 class="card-title">แก้ไขข้อมูลส่วนตัว</h3>
               
             </div>
             <br>
@@ -94,30 +94,25 @@ $row=mysqli_fetch_array($rs_member);
 
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Username </label>
+                    <label for="" class="col-sm-2 col-form-label">ชื่อผู้ใช้ </label>
                     <div class="col-sm-10">
                       <input type="text" name="mem_username" class="form-control" id="mem_username" placeholder="" value="<?php echo $row['mem_username']; ?>">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">Password </label>
+                    <label for="" class="col-sm-2 col-form-label">รหัสผ่าน </label>
                     <div class="col-sm-10">
-                      <input type="text" name="mem_password" class="form-control" id="mem_password" placeholder="ใส่รหัสผ่านก่อนกดบันทึก" required="" value="" required>
+                      <input type="password" name="mem_password" class="form-control" id="mem_password" placeholder="ใส่รหัสผ่านก่อนกดบันทึก" required="" value="" required>
                     </div>
                   </div>
 
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">img</label>
+                    <label for="" class="col-sm-2 col-form-label">รูปโปรไฟล์</label>
                     <div class="col-sm-10">
-                     
-                  
-                  
-            
-                  ภาพเก่า<br>
-
-                        <img src="../mem_img/<?php echo $row['mem_img'];?>" width="150px">
+                                    
+                        <img src="../mem_img/<?php echo $row['mem_img'];?>" width="300px">
                         <input type="hidden" name="mem_img2" value="<?php echo $row['mem_img'];?>">
                         <br><br>
 
@@ -130,7 +125,7 @@ $row=mysqli_fetch_array($rs_member);
 
 
                   <div class="form-group row">
-                    <label for="" class="col-sm-2 col-form-label">img</label>
+                    <label for="" class="col-sm-2 col-form-label">รูปที่ต้องการเปลี่ยน</label>
                     <div class="col-sm-10">
                      
                   
@@ -141,12 +136,12 @@ $row=mysqli_fetch_array($rs_member);
 
                   <div class="custom-file">
                           <input type="file" class="custom-file-input" id="mem_img" name="mem_img" onchange="readURL(this);" >
-                          <label class="custom-file-label" for="file">Choose file</label>
+                          <label class="custom-file-label" for="file">เลือกรูป</label>
                         </div>
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                    <img id="blah" src="#" alt="" width="300" />
 
 
                     </div>
@@ -155,7 +150,7 @@ $row=mysqli_fetch_array($rs_member);
 
 
 
-                  <button type="submit" class="btn btn-danger btn-block">Update</button>
+                  <button type="submit" class="btn btn-danger btn-block">ยืนยัน</button>
 
 
 

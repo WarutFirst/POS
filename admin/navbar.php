@@ -5,7 +5,7 @@
       </li>
  
       <li class="nav-item">
-        <a class="nav-link <?php if ($menu == "index"){echo "active";} ?>"  href="index.php"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-link <?php if ($menu == "index"){echo "active";} ?>"  href="index.php"><i class="fas fa-home"></i> หน้าหลัก</a>
       </li>
       
     </ul>
@@ -15,7 +15,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item ">
         <a href="../logout.php" class="nav-link ">
-          <i class="fa fa-power-off"></i> Logout
+          <i class="fa fa-power-off"></i> ออกจากระบบ
         </a>
         
       </li>

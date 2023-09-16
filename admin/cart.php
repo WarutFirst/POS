@@ -87,8 +87,8 @@ if(!empty($_SESSION['cart']))
 		
 
 		. "</td>";
-		echo "<td align='right'>" .number_format($row["p_price"],2) . "</td>";
-		echo "<td align='right'>"; 
+		echo "<td align='center'>" .number_format($row["p_price"],2) . "</td>";
+		echo "<td align='center'>"; 
 
 
 
@@ -96,7 +96,7 @@ if(!empty($_SESSION['cart']))
 		echo "<input type='number' name='amount[$p_id]' value='$qty' size='2'class='form-control' min='0'max='$pqty'/>";
 
 
-		echo "<td align='right'>".number_format($sum,2)."</td>";
+		echo "<td align='center'>".number_format($sum,2)."</td>";
 
 		//remove product
 
@@ -111,8 +111,8 @@ echo "</tr>";
 	echo "<td></td>";
 	
   	echo "<td bgcolor='#CEE7FF' align='center'><b>ราคารวม</b></td>";
-  	echo "<td align='right' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
-  	echo "<td align='left' bgcolor='#CEE7FF'></td>";
+  	echo "<td align='center' bgcolor='#CEE7FF'>"."<b>".number_format($total,2)."</b>"."</td>";
+  	echo "<td align='center' bgcolor='#CEE7FF'></td>";
 	echo "</tr>";
 }
 ?>
@@ -124,7 +124,7 @@ echo "</tr>";
 
 <!-- <a href="#" target="" class="btn btn-success" onclick="window.print()">Print</a> -->
 
-		<input type="submit" name="button" id="button" value="ปรับปรุง" class="btn btn-warning" />
+		<input type="submit" name="button" id="button" value="ปรับยอด" class="btn btn-warning" />
 
         <input type="button" name="Submit2" value="ทำรายการต่อไป" onclick="window.location='confirm_a.php';" class="btn btn-primary" />
 

@@ -101,7 +101,7 @@ $paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" clas
 
     <div class="card card-gray">
             <div class="card-header ">
-              <h3 class="card-title">สินค้า IN STOCK</h3>
+              <h3 class="card-title">สินค้า</h3>
             </div>
             <br>
 
@@ -116,7 +116,7 @@ $paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" clas
                     <div class="col-md-7">
                       <form action="list_l.php"  method="GET" >
                  <div class="input-group">
-                    <input type="text" name="p_id" class="form-control" placeholder="Scan Barcode" autofocus >
+                    <input type="text" name="p_id" class="form-control" placeholder="Scan QR code" autofocus >
                      <!-- <span class="input-group-append">
                      <button class="btn btn-outline-success" type="submit">ค้นหา</button>
                      </span> -->
@@ -139,8 +139,8 @@ $paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" clas
                               <img width="100%" src="../p_img/<?php echo $rs_prd['p_img'] ;?>" class="card-img-top" alt="<?php echo $rs_prd['p_name'] ;?>" title="<?php echo $rs_prd['p_name'] ;?>">
                               <div class="card-body">
                                  <h5 class="card-title"><?php echo $rs_prd['p_name']; ?></h5>
-                                <p class="card-text"><?php echo "<br>".number_format($rs_prd['p_price'],2); ?> Baht</p>
-                                <p class="card-text"><?php  echo "สต๊อก ".$rs_prd["p_qty"]." รายการ"; ?> </p>
+                                <p class="card-text"><?php echo "<br>".number_format($rs_prd['p_price'],2); ?> บาท</p>
+                                <p class="card-text"><?php  echo "คงเหลือ ".$rs_prd["p_qty"]." รายการ"; ?> </p>
               
 
 
@@ -156,7 +156,7 @@ $paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" clas
                                           <a href="list_l.php?p_id=<?php echo $rs_prd['p_id'];?>&act=add" class="btn btn-success" target=""><i class="fa fa-shopping-cart"></i> หยิบลงตระกร้า</a>
                                           </center>
                                 <?php } else { ?>
-                                  <button class="btn btn-danger" disabled> สินค้าหมด !</button>
+                                  <button class="btn btn-danger" disabled> สินค้าหมด! </button>
                                 <?php } ?>
 
 
@@ -177,7 +177,7 @@ $paginationCtrls .= ' &nbsp;<a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" clas
 
 
                     <div class="col-md-5">
-                      <?php include('cart_a_2.php');?>
+                      <?php include('cart.php');?>
                     </div>
 
                 </div>

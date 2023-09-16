@@ -136,7 +136,7 @@ $row=mysqli_fetch_array($rs_product);
                         <br><br>
 
 
-                    <img id="blah" src="#" alt="your image" width="300" />
+                    <img id="blah" src="#" alt="" width="300" />
 
 
                     </div>

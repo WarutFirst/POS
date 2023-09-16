@@ -12,9 +12,6 @@ or die
 $rs_my_order = mysqli_query($condb, $query_my_order);
 //echo ($query_my_order);//test query
 
-
-
-
 ?>
 
 
@@ -22,11 +19,11 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
 <table id="example1" class="table table-bordered  table-hover table-striped">
   <thead>
     <tr class="danger">
-      <th width="7%"><center>No.</center></th>
+      <th width="5%">รายการที่</th>
       <th width="20%">พนักงานขาย</th>
-      <th width="20%">Status</th>
+      <th width="20%">สถานะ</th>
       
-      <th width="10%">date</th>
+      <th width="10%">วันที่สร้างรายการ</th>
       <th width="10%">จัดการ</th>
       
     </tr>

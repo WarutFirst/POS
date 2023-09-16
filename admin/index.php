@@ -1,8 +1,8 @@
-<?php $menu = "index" ?>
 
 <?php 
-//  session_start();
-//  print_r($_SESSION);
+  //session_start();
+  //  print_r($_SESSION);
+  $menu = "index";
 ?>
 
 
@@ -10,7 +10,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
-    <h1>Index</h1>
+    <h1>รายการขาย</h1>
     </div><!-- /.container-fluid -->
   </section>
   <!-- Main content -->
@@ -68,11 +68,9 @@
   //   "ordering": true,
   //   "info": true,
   //   "autoWidth": false,
-  // http://fordev22.com/
   // });
   });
   </script>
   
 </body>
 </html>
-<!-- http://fordev22.com/ -->

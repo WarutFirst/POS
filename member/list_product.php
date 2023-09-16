@@ -25,7 +25,7 @@ reader.readAsDataURL(input.files[0]);
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
-    <h1>Product</h1>
+    <h1>จัดการสินค้า</h1>
     </div><!-- /.container-fluid -->
   </section>
   <!-- Main content -->
@@ -48,16 +48,16 @@ reader.readAsDataURL(input.files[0]);
           <div class="col-md-12">
             <table id="example1" class="table table-bordered  table-hover table-striped">
               <thead>
-                <tr class="danger">
-                  <th width="5%"><center>No.</center></th>
-                  <th width="10%">Img</th>
+                <tr class="danger" >
+                  <th width="7%"><center>รายการสินค้าที่</th>
+                  <th width="10%"><center>รูปสินค้า</th>
                   
-                  <th width="20%">Name</th>
-                  <th width="10%">price</th>
-                  <th width="10%">qty</th>
+                  <th width="20%"><center>ชื่อสินค้า</th>
+                  <th width="10%"><center>ราคา</th>
+                  <th width="10%"><center>จำนวน</th>
                   
-                  <th width="10%">edit</th>
-                  <th width="10%">del</th>
+                  <th width="5%" ><center>แก้ไขสินค้า</th>
+                  <th width="5%"><center>ลบสินค้า</th>
                   
                 </tr>
               </thead>
@@ -66,21 +66,21 @@ reader.readAsDataURL(input.files[0]);
                 
                 
                 <tr>
-                  <td><?php echo @$l+=1; ?></td>
-                  <td><img src="../p_img/<?php echo $row_product['p_img']; ?>" width="100%"></td>
-                  <td><?php echo $row_product['p_name']; ?></td>
+                  <td align='center'><?php echo @$l+=1; ?></td>
+                  <td align='center'><img src="../p_img/<?php echo $row_product['p_img']; ?>" width="100%"></td>
+                  <td align='center'><?php echo $row_product['p_name']; ?></td>
                   
-                  <td><?php echo $row_product['p_price']; ?></td>
-                  <td><?php echo $row_product['p_qty']; ?></td>
+                  <td align='center'><?php echo $row_product['p_price']; ?></td>
+                  <td align='center'><?php echo $row_product['p_qty']; ?></td>
                   
                   <td>
                     <p style="margin-bottom: 10px;">
-                      <a href="product_edit.php?p_id=<?php echo $row_product['p_id']; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> edit</a>
+                      <a href="product_edit.php?p_id=<?php echo $row_product['p_id']; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> </a>
                     </p>
                     
                     <!-- <a href="level.php?ace=edit&l_id=<?php echo $row_product['l_id'];?>" class="btn btn-warning btn-xs"> edit</a> -->
                   </td>
-                  <td><a href="product_db.php?p_id=<?php echo $row_product['p_id']; ?>&&product=del" class="del-btn btn btn-danger"><i class="fas fas fa-trash"></i> del</a></td>
+                  <td><a href="product_db.php?p_id=<?php echo $row_product['p_id']; ?>&&product=del" class="del-btn btn btn-danger"><i class="fas fas fa-trash"></i> </a></td>
                   
                 </tr>
                 <?php
@@ -151,40 +151,40 @@ reader.readAsDataURL(input.files[0]);
         <input type="hidden" name="product" value="add">
         <div class="modal-content">
           <div class="modal-header bg-dark">
-            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล สินค้า</h5>
+            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลสินค้า</h5>
             <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group row">
-              <label for="" class="col-sm-2 col-form-label">ชื่อ </label>
+              <label for="" class="col-sm-2 col-form-label">ชื่อสินค้า </label>
               <div class="col-sm-10">
-                <input  name="p_name" type="text" required class="form-control"  placeholder="Product name"  minlength="3"/>
+                <input  name="p_name" type="text" required class="form-control"  placeholder="สติ้กเกอร์"  minlength="3"/>
               </div>
             </div>
             
           </span>
           <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">Detail </label>
+            <label for="" class="col-sm-2 col-form-label">รายละเอียดสินค้า </label>
             <div class="col-sm-10">
-              <textarea name="p_detail" rows="3" class="form-control"></textarea>
+              <textarea name="p_detail" rows="3" placeholder="ขนาด ก x ย x ส" class="form-control"></textarea>
             </div>
           </div>
           <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">Price </label>
+            <label for="" class="col-sm-2 col-form-label">ราคาสินค้า </label>
             <div class="col-sm-10">
-              <input  name="p_price" type="number" min="0" required class="form-control"  placeholder="Price"  minlength="3"/>
+              <input  name="p_price" type="number" min="0" required class="form-control"  placeholder="100 บาท"  minlength="3"/>
             </div>
           </div>
           <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">Qty </label>
+            <label for="" class="col-sm-2 col-form-label">จำนวน </label>
             <div class="col-sm-10">
-              <input  name="p_qty" type="number" min="0" required class="form-control"  placeholder="Qty"  minlength="3"/>
+              <input  name="p_qty" type="number" min="0" required class="form-control"  placeholder="10 ชิ้น"  minlength="3"/>
             </div>
           </div>
           <div class="form-group row">
-            <label for="" class="col-sm-2 col-form-label">img</label>
+            <label for="" class="col-sm-2 col-form-label">รูปสินค้า</label>
             <div class="col-sm-10">
               
               
@@ -193,10 +193,10 @@ reader.readAsDataURL(input.files[0]);
               เลือกไฟล์ใหม่<br>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="p_img" name="p_img" onchange="readURL(this);" >
-                <label class="custom-file-label" for="file">Choose file</label>
+                <label class="custom-file-label" for="file">เลือกไฟล์</label>
               </div>
               <br><br>
-              <img id="blah" src="#" alt="your image" width="300" />
+              <img id="blah" src="#" alt="" width="300" />
             </div>
           </div>
           

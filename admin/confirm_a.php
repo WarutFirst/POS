@@ -56,12 +56,12 @@ $menu = "sale";
   <table border="0" align="center" class="table table-hover table-bordered table-striped">
     
     <tr>
-      <td width="5%" align="center">ลำดัยสินค้า</td>
-      <td width="10%" align="center">img</td>
+      <td width="5%" align="center">ลำดับสินค้า</td>
+      <td width="10%" align="center">รูปสินค้า</td>
       <td width="40%" align="center">สินค้า</td>
       <td width="10%" align="center">ราคา</td>
       <td width="10%" align="center">จำนวน</td>
-      <td width="15%" align="center">รวม(บาท)</td>
+      <td width="15%" align="center">ราคารวม</td>
      
     </tr>
 <?php
@@ -78,19 +78,18 @@ if(!empty($_SESSION['cart']))
 		$sum = $row['p_price'] * $qty;//เอาราคาสินค้ามา * จำนวนในตระกร้า
 		$total += $sum; //ราคารวม ทั้ง ตระกร้า
 		echo "<tr>";
-		echo "<td>" . $i+=1 . "</td>";
+		echo "<td> <center>" . $i+=1 . "</td>";
 		echo "<td>"."<img src='../p_img/".$row['p_img']."' width='100%'>"."</td>";
-		echo "<td>" 
+		echo "<td align='center'>" 
 
 		. $row["p_name"] 
-		."<br>"
-		."สต๊อก "
+		." คงเหลือ "
 		.$row['p_qty']
 		." รายการ"
 
 		. "</td>";
-		echo "<td align='right'>" .number_format($row["p_price"],2) . "</td>";
-		echo "<td align='right'>"; 
+		echo "<td align='center'>" .number_format($row["p_price"],2) . " บาท</td>";
+		echo "<td align='center'>"; 
 
 
 
@@ -98,7 +97,7 @@ if(!empty($_SESSION['cart']))
 		echo "<input type='number' name='amount[$p_id]' value='$qty' size='2'class='form-control' min='0'max='$pqty' readonly/></td>";
 
 
-		echo "<td align='right'>".number_format($sum,2)."</td>";
+		echo "<td align='center'>".number_format($sum,2)." บาท </td>";
 		//remove product
 	
 	}
@@ -129,7 +128,7 @@ if(!empty($_SESSION['cart']))
 
 
 <div class="form-group row">
- <label for="" class="col-sm-2 col-form-label">ยอดเงินที่ รับชำระ</label>
+ <label for="" class="col-sm-2 col-form-label">ยอดเงินที่รับชำระ</label>
     <div class="col-sm-5">
     <input type="number" min="<?php echo $total; ?>" name="pay_amount2" required class="form-control" id="" 
      placeholder="">

@@ -23,7 +23,7 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
 
 <center>
 	<h4>รายการสั่งซื้อ<br>
-		Order Id : <?php echo $order_id; ?> </br>
+		รายการที่ : <?php echo $order_id; ?> </br>
 		ว/ด/ป : <?php echo date('d/m/y',strtotime($rowmember['order_date'])); ?></br>
 	ผู้ทำรายการ : <?php echo $rowmember['mem_name']; ?> <br/>สถานะ :
 	<?php include('mystatus.php');?>
@@ -34,11 +34,11 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
     
     <tr>
   <td width="5%" align="center">ลำดับสินค้า</td>
-      <td width="10%" align="center">img</td>
-      <td width="35%" align="center">สินค้า</td>
+      <td width="10%" align="center">รูปสินค้า</td>
+      <td width="35%" align="center">ชื่อสินค้า</td>
       <td width="10%" align="center">ราคา/หน่วย</td>
       <td width="10%" align="center">จำนวน</td>
-      <td width="15%" align="center">รวม(บาท)</td>
+      <td width="15%" align="center">ราคารวม</td>
      
     </tr>
 <?php
@@ -48,25 +48,16 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
 	
 	foreach($querypay as $rspay)
 	{
-		
-		
 		$total += $rspay['total']; //ราคารวม ทั้ง ตระกร้า
 		echo "<tr>";
-		echo "<td>" . @$i+=1 . "</td>";
-		echo "<td>"."<img src='../p_img/".$rspay['p_img']."' width='100%'>"."</td>";
-		echo "<td>" . $rspay["p_name"] . "</td>";
-		echo "<td align='right'>" .number_format($rspay["p_price"],2) . "</td>";
-		echo "<td align='right'>"; 
+		echo "<td align='center'>" . @$i+=1 . "</td>";
+		echo "<td align='center'>"."<img src='../p_img/".$rspay['p_img']."' width='100%'>"."</td>";
+		echo "<td align='center'>" . $rspay["p_name"] . "</td>";
+		echo "<td align='center'>" .number_format($rspay["p_price"],2) . "</td>";
+		echo "<td align='center'>"; 
 
-
-
-		
 		echo "<input type='number' name='p_c_qty' value='$rspay[p_c_qty]' size='2'class='form-control' disabled/></td>";
-
-
-		echo "<td align='right'>".number_format($rspay['total'],2)."</td>";
-	
-	
+		echo "<td align='center'>".number_format($rspay['total'],2)." บาท</td>";
 	}
 	include('../convertnumtothai.php');
 	?>
@@ -104,12 +95,12 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
   	<td align='right'colspan='2'>
 
 
-  		<b><?php echo number_format($total,2);?> Baht</b>
+  		<b><?php echo number_format($total,2);?> บาท</b>
 
   		<br>
-  			<b><?php echo number_format($rowmember['pay_amount2'],2);?> Baht</b>
+  			<b><?php echo number_format($rowmember['pay_amount2'],2);?> บาท</b>
   		<br>
-  			<b><?php echo number_format($pay_amount3,2);?> Baht</b>
+  			<b><?php echo number_format($pay_amount3,2);?> บาท</b>
 
 
 
@@ -125,4 +116,4 @@ $order_id = mysqli_real_escape_string($condb,$_GET['order_id']);
 </table>
 <br>
 
-<a href="#" target="" class="btn btn-success" onclick="window.print()">Print</a>
+<a href="#" target="" class="btn btn-success" onclick="window.print()">พิมพ์</a>

@@ -7,16 +7,16 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">FD22 | POS System</span>
+      <span class="brand-text font-weight-light">POS System | By 6lvckshorty</span>
     </a> -->
 
 
     <a href="" class="brand-link bg-gray">
-      <img src="../assets/img/ffd2222.png"
+      <img src="../logo.png"
            alt="AdminLTE Logo"
            class="brand-image"
           >
-      <span class="brand-text font-weight-light">FD22 | POS System</span>
+      <span class="brand-text font-weight-light">POS System | By 6lvckshorty</span>
     </a>
 
     <!-- Sidebar -->
@@ -28,7 +28,7 @@
           <!-- <img src="../assets/img/FD22.png" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="info">
-          <a href="edit_profile.php" target="" class="d-block"> <?php echo $_SESSION['mem_name'];?> | Edit Profile</a>
+          <a href="edit_profile.php" target="" class="d-block"> <?php echo $_SESSION['mem_name'];?> | แก้ไขข้อมูลส่วนตัว </a>
         </div>
       </div>
 
@@ -97,7 +97,7 @@
                
           <li class="nav-header">รายงานการขาย</li>
           <li class="nav-item">
-            <a href="report_p5.php" class="nav-link <?php if($menu=="report_p5"){echo "active";} ?> ">
+            <a href="top5.php" class="nav-link <?php if($menu=="report_p5"){echo "active";} ?> ">
               <i class="nav-icon fas fa-crown text-fuchsia"></i>
               <p>5 อันดับสินค้าขายดี</p>
             </a>

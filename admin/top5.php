@@ -1,7 +1,8 @@
-<?php
-$menu = "report_p5"
+<?php 
+  $menu = "report_p5";
+  include("header.php"); 
+  include("../condb.php");
 ?>
-<?php include("header.php"); ?>
 
 <?php
 
@@ -23,19 +24,12 @@ $rs_my_order = mysqli_query($condb, $query_my_order);
 if($_SESSION["ref_l_id"]=="1"){ 
   //echo "Are Your Admin";
   //exit();
-  Header("Location: admin/");
-
-}
-else{
-echo "<script>";
-  echo "alert(\" ไม่สามารถเข้าถึงหน้านี้ได้\");"; 
-  echo "window.history.back()";
-echo "</script>";
-}
-?>
 
 
 ?>
+
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -45,14 +39,14 @@ echo "</script>";
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
-    <h1>Dashboard</h1>
+    <h1>รายงานการขาย</h1>
     </div><!-- /.container-fluid -->
   </section>
   <!-- Main content -->
   <section class="content">
     <div class="card card-gray">
       <div class="card-header ">
-        <h3 class="card-title">Report Top 5</h3>
+        <h3 class="card-title">5 อันดับสินค้าขายดี</h3>
         
       </div>
       <br>
@@ -78,14 +72,13 @@ echo "</script>";
                 foreach($rs_my_order as $rs_order){
                 echo"<tr>";
                   echo "<td>".$rs_order['p_name']."</td>";
-                  echo "<td>".$rs_order['totol']."</td>";
+                  echo "<td>".$rs_order['totol']." </td>";
                   
                   
                 echo"</tr>";
                 }
                 ?>
-                
-              </tbody>
+                </tbody>
             </table>
             
             
@@ -194,7 +187,16 @@ this.point.y + ' ' + this.point.name.toLowerCase();
 
 </script>
 
-<?php include('footer2.php'); ?>
+<?php include('footer2.php'); 
+
+}
+else{
+echo "<script>";
+  echo "alert(\" ไม่สามารถเข้าถึงหน้านี้ได้\");"; 
+  echo "window.history.back()";
+echo "</script>";
+}
+?>
 
 
 <script>
